@@ -13,11 +13,12 @@ public class Exercise4 {
 
             Statement statement = connection.createStatement();
 
+            statement.executeUpdate("ALTER TABLE students ADD COLUMN country VARCHAR(30)");
+
             statement.executeUpdate("UPDATE newdb.students SET country='Italy' WHERE  student_id=1");
             statement.executeUpdate("UPDATE newdb.students SET country='Italy' WHERE  student_id=2");
             statement.executeUpdate("UPDATE newdb.students SET country='Germany' WHERE  student_id=3");
             statement.executeUpdate("UPDATE newdb.students SET country='Germany' WHERE  student_id=4");
-            statement.executeUpdate("ALTER TABLE newdb.students MODIFY COLUMN country VARCHAR(30)");
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
 
